@@ -6,9 +6,17 @@ from abc import ABC , abstractclassmethod, abstractmethod
 
 
 class Musician(ABC):
+    
     '''
-    Base Class
-    '''
+     An abstract class that contains instance attribute name and abstract methods:
+        1. __str__
+        2. __repr__
+        3. get_instrument
+        4. play_solo
+     
+  
+     '''
+
   
     def __init__(self, name):
         self.name = name
@@ -28,6 +36,19 @@ class Musician(ABC):
 
 
 class Band(Musician):
+
+   
+    ''' 
+      A child classthat contains:
+        1. instance attributes "name and members"
+        2. class method "to_list"
+        3. class attribute "instances" which is a list of instances that inherit from base class.
+        4."play_solos" method that asks each member musician to play a solo.
+        5. abstracted methods from parent class
+     
+     '''
+
+
     instances =[]
    
     def __init__(self,name,members=[] ) :
@@ -56,7 +77,14 @@ class Band(Musician):
         return self.name
 
 class Guitarist(Musician):
-   
+    '''
+    A child class that contains instance attribute name and abstracted methods:
+        1. __str__
+        2. __repr__
+        3. get_instrument
+        4. play_solo
+    from parent class(Musician)
+    '''
 
     def __init__(self, name):
         self.name = name
@@ -72,7 +100,15 @@ class Guitarist(Musician):
 
 class Drummer(Musician):
 
-    
+    '''
+    A child class that contains instance attribute name and abstracted methods:
+        1. __str__
+        2. __repr__
+        3. get_instrument
+        4. play_solo
+    from parent class(Musician)
+    '''
+
     def __init__(self, name):
         super().__init__(name)
         self.name=name 
@@ -87,6 +123,15 @@ class Drummer(Musician):
         return "drums"
 
 class Bassist(Musician):
+
+    '''
+    A child class that contains instance attribute name and abstracted methods:
+        1. __str__
+        2. __repr__
+        3. get_instrument
+        4. play_solo
+    from parent class(Musician)
+    '''
    
     def __init__(self, name):
         super().__init__(name)
